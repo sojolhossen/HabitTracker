@@ -153,4 +153,22 @@ public class DateUtils {
         
         return dates;
     }
+
+    /**
+     * Get number of days between two dates
+     * @return Number of days (always positive)
+     */
+    public static long getDaysBetween(Date startDate, Date endDate) {
+        if (startDate == null || endDate == null) return 0;
+        long diffInMillis = endDate.getTime() - startDate.getTime();
+        return Math.max(1, TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS));
+    }
+
+    /**
+     * Get short day and month format (e.g., "Jan 15")
+     */
+    public static String getDayMonthShort(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd", Locale.getDefault());
+        return sdf.format(date);
+    }
 }

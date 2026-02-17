@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home" />
+
+    <item
+        android:id="@+id/nav_calendar"
+        android:title="Calendar"
+        android:icon="@drawable/ic_calendar" />
+
+    <item
+        android:id="@+id/nav_statistics"
+        android:title="Stats"
+        android:icon="@drawable/ic_statistics" />
+
+    <item
+        android:id="@+id/nav_achievements"
+        android:title="Badges"
+        android:icon="@drawable/ic_star" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings" />
+
+</menu>

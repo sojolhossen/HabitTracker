@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#F03411</color>
+    <color name="colorPrimaryDark">#C42A0E</color>
+    <color name="colorPrimaryLight">#F5674D</color>
+    
+    <!-- Accent Colors -->
+    <color name="colorAccent">#F03411</color>
+    <color name="colorAccentDark">#C42A0E</color>
+    
+    <!-- Background Colors -->
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorSurface">#FFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorTextHint">#BDBDBD</color>
+    
+    <!-- Status Colors -->
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorError">#F44336</color>
+    <color name="colorWarning">#FFC107</color>
+    <color name="colorInfo">#2196F3</color>
+    
+    <!-- Gray Scale -->
+    <color name="colorGray">#9E9E9E</color>
+    <color name="colorGrayLight">#E0E0E0</color>
+    <color name="colorGrayDark">#616161</color>
+    
+    <!-- Divider -->
+    <color name="colorDivider">#EEEEEE</color>
+    
+    <!-- Habit Colors -->
+    <color name="habitRed">#FF6B6B</color>
+    <color name="habitTeal">#4ECDC4</color>
+    <color name="habitBlue">#45B7D1</color>
+    <color name="habitGreen">#96CEB4</color>
+    <color name="habitYellow">#FFEAA7</color>
+    <color name="habitPurple">#DDA0DD</color>
+    <color name="habitOrange">#F8B500</color>
+    <color name="habitPink">#FF6B9D</color>
+    
+    <!-- Streak Colors -->
+    <color name="streakLow">#FF9800</color>
+    <color name="streakMedium">#FF5722</color>
+    <color name="streakHigh">#E91E63</color>
+    <color name="streakLegendary">#9C27B0</color>
+</resources>

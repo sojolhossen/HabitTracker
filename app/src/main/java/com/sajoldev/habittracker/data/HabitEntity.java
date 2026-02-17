@@ -23,6 +23,17 @@ public class HabitEntity {
     private String goal;
     private int color;
     private int iconResourceId;
+    private String category;
+    private Date createdDate;
+
+    // Frequency settings (Daily, Weekly, Custom)
+    private String frequency; // "Daily", "Weekly", "Custom"
+    private String selectedDays; // "Mon,Wed,Fri" for custom days
+
+    // Reminder settings
+    private boolean reminderEnabled;
+    private int reminderHour;
+    private int reminderMinute;
 
     // Streak tracking
     private int currentStreak;
@@ -42,6 +53,13 @@ public class HabitEntity {
         this.goal = goal;
         this.color = color;
         this.iconResourceId = iconResourceId;
+        this.category = "Other";
+        this.createdDate = new Date();
+        this.frequency = "Daily";
+        this.selectedDays = "";
+        this.reminderEnabled = true;
+        this.reminderHour = 9;
+        this.reminderMinute = 0;
         this.currentStreak = 0;
         this.longestStreak = 0;
         this.completedDates = new HashSet<>();
@@ -64,6 +82,27 @@ public class HabitEntity {
 
     public int getIconResourceId() { return iconResourceId; }
     public void setIconResourceId(int iconResourceId) { this.iconResourceId = iconResourceId; }
+
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
+
+    public Date getCreatedDate() { return createdDate; }
+    public void setCreatedDate(Date createdDate) { this.createdDate = createdDate; }
+
+    public String getFrequency() { return frequency; }
+    public void setFrequency(String frequency) { this.frequency = frequency; }
+
+    public String getSelectedDays() { return selectedDays; }
+    public void setSelectedDays(String selectedDays) { this.selectedDays = selectedDays; }
+
+    public boolean isReminderEnabled() { return reminderEnabled; }
+    public void setReminderEnabled(boolean reminderEnabled) { this.reminderEnabled = reminderEnabled; }
+
+    public int getReminderHour() { return reminderHour; }
+    public void setReminderHour(int reminderHour) { this.reminderHour = reminderHour; }
+
+    public int getReminderMinute() { return reminderMinute; }
+    public void setReminderMinute(int reminderMinute) { this.reminderMinute = reminderMinute; }
 
     public int getCurrentStreak() { return currentStreak; }
     public void setCurrentStreak(int currentStreak) { this.currentStreak = currentStreak; }
@@ -108,5 +147,13 @@ public class HabitEntity {
         if (completedDates != null) {
             completedDates.remove(dateStr);
         }
+    }
+
+    /**
+     * Get completion dates as a List
+     * @return List of completion date strings
+     */
+    public java.util.List<String> getCompletionDatesList() {
+        return completedDates != null ? new java.util.ArrayList<>(completedDates) : new java.util.ArrayList<>();
     }
 }

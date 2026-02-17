@@ -10,9 +10,9 @@ import androidx.room.TypeConverters;
 /**
  * HabitDatabase - Room Database
  * Singleton pattern for database instance
- * Version 1: Initial database schema
+ * Version 2: Updated schema after DAO method changes
  */
-@Database(entities = {HabitEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {HabitEntity.class}, version = 2, exportSchema = false)
 @TypeConverters({DateConverter.class, StringSetConverter.class})
 public abstract class HabitDatabase extends RoomDatabase {
 

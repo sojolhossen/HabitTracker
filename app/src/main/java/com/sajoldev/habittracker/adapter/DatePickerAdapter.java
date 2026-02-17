@@ -34,7 +34,21 @@ public class DatePickerAdapter extends RecyclerView.Adapter<DatePickerAdapter.Da
     public DatePickerAdapter(Date[] dates, OnDateSelectedListener listener) {
         this.dates = dates;
         this.listener = listener;
-        this.selectedPosition = dates.length / 2; // Select middle (today) by default
+        this.selectedPosition = findTodayPosition(); // Select today by default
+    }
+    
+    /**
+     * Find the position of today in the dates array
+     */
+    private int findTodayPosition() {
+        Date today = new Date();
+        String todayStr = DateUtils.dateToString(today);
+        for (int i = 0; i < dates.length; i++) {
+            if (DateUtils.dateToString(dates[i]).equals(todayStr)) {
+                return i;
+            }
+        }
+        return dates.length / 2; // Fallback to middle if today not found
     }
 
     @NonNull

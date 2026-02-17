@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_statistics"
+        android:title="Statistics"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_calendar"
+        android:title="Calendar"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_achievements"
+        android:title="Achievements"
+        android:icon="@android:drawable/ic_menu_star"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        app:showAsAction="never" />
+
+</menu>

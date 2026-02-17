@@ -3,6 +3,9 @@ package com.sajoldev.habittracker.adapter;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +60,10 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
     public void onBindViewHolder(@NonNull HabitViewHolder holder, int position) {
         HabitEntity habit = habits.get(position);
         holder.bind(habit, position);
+        
+        Animation slideIn = AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.item_slide_in);
+        slideIn.setStartOffset(position * 100);
+        holder.itemView.startAnimation(slideIn);
     }
 
     @Override
@@ -209,6 +216,8 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
                     if (isCompleting) {
                         checkImageView.setImageResource(R.drawable.ic_check_circle);
                         checkImageView.setColorFilter(cardView.getContext().getResources().getColor(R.color.colorSuccess));
+                        // Play completion sound
+                        playCompletionSound();
                     } else {
                         checkImageView.setImageResource(R.drawable.ic_check_circle_outline);
                         checkImageView.setColorFilter(cardView.getContext().getResources().getColor(R.color.colorGray));
@@ -230,6 +239,18 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
             
             scaleUp.start();
             scaleUpY.start();
+        }
+
+        private void playCompletionSound() {
+            try {
+                MediaPlayer mediaPlayer = MediaPlayer.create(cardView.getContext(), android.provider.Settings.System.DEFAULT_NOTIFICATION_URI);
+                if (mediaPlayer != null) {
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(MediaPlayer::release);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

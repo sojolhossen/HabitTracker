@@ -29,7 +29,7 @@ public interface HabitDao {
     List<HabitEntity> getAllHabitsSync();
 
     /**
-     * Get a specific habit by ID
+     * Get a specific habit by ID (synchronous)
      */
     @Query("SELECT * FROM habits WHERE id = :habitId")
     HabitEntity getHabitById(int habitId);
@@ -58,6 +58,12 @@ public interface HabitDao {
      */
     @Query("DELETE FROM habits WHERE id = :habitId")
     void deleteHabitById(int habitId);
+
+    /**
+     * Delete all habits
+     */
+    @Query("DELETE FROM habits")
+    void deleteAllHabits();
 
     /**
      * Update streak information
